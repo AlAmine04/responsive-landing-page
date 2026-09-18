@@ -1,14 +1,15 @@
 *{
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-sizing: border-box;
     margin: 0;
-}
-img{
-    width: 15px;
+    padding: 0;
 }
 body{
     background-color: rgb(34, 80, 232);
     color: rgb(215, 205, 205);
+}
+img{
+    width: 15px;
 }
 header{
     display: flex;
@@ -20,42 +21,70 @@ header{
 
 main{
     display: flex;
+    border: 1px solid;
+    height: 85vh;
 }
 section.intro
 {
-    flex: 2;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 10px;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    height: 85vh;
+    
 }
 section.details{
+    flex: 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    flex: 3;
-    p.info{
-        font-weight: bold;
-    }  
+    grid-template-rows: repeat(2, 1fr);  
+}
+.intro h3, .info{
+    font-weight: bold;
+    padding-bottom: 2%;
 }
 .details>div{
-    padding: 10px;
-    border: 1px solid rgb(158, 185, 196);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    div.intro{
-        display: flex;
-        justify-content: space-between;
-    }
+    padding: 10px;
+    border-left: 1px solid;
 }
-footer{
-    padding: 10px 15px;
+.details div.intro{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+}
+.box1, .box2{
+    border-bottom: 1px solid;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
     height: 5vh;
+}
+
+/* make it responsive, if the screen width is 600px or less */
+@media screen and (max-width: 600px) {
+    main{
+        flex-direction: column;
+    }
+    section.details{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .details .intro{
+        padding-bottom: 10%;
+    }
+    .details .box1, .box4{
+        border-top: 1px solid;
+    }
+    .details >div{
+        border-right: 1px solid;
+    }
+    footer{
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
 }
