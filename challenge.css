@@ -1,3 +1,9 @@
+:root{
+    --primary-bg-color: var(--primary-bg-color);
+    --secondary-bg-color: rgb(213, 216, 226);
+    --primary-color: white;
+}
+
 *{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-sizing: border-box;
@@ -6,7 +12,7 @@
 }
 body{
     background-color: rgb(34, 80, 232);
-    color: rgb(215, 205, 205);
+    color: var(--primary-color);
 }
 img{
     width: 15px;
@@ -18,7 +24,46 @@ header{
     padding: 10px 15px;
     height: 10vh;
 }
-
+.dropdown{
+    display: inline;
+}
+.dropdown img{
+    width: 25px;
+}
+.dropdown button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.dropdown{
+    margin-right: 120px;
+}
+.dropdown a{
+    display: block;
+    color: rgb(71, 66, 66);
+    text-decoration: none;
+    padding: 4px 2px;
+}
+.dropdown .content{
+    position: absolute;
+    display: none;
+    background-color: var(--secondary-bg-color);
+    min-width: auto;
+    box-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.801);
+    border-radius: 0px 12px 5px 0px;
+}
+.dropdown:hover .content{
+    display: block;
+}
+.dropdown:hover button{
+    background-color: var(--secondary-bg-color);
+    padding: 0px 6px;
+    border-radius: 2px 2px 0px 0px;
+}
+.dropdown a:hover{
+    border-radius: 2px;
+    background-color: rgb(194, 202, 226);
+}
 main{
     display: flex;
     border: 1px solid;
